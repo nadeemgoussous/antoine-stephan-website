@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Project {
   id: number;
@@ -68,11 +69,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </button>
 
         {/* Image Gallery */}
-        <div className="relative aspect-video bg-gradient-to-br from-gray-300 to-gray-500">
-          {/* Placeholder for project image */}
-          <div className="w-full h-full flex items-center justify-center text-white/30 text-5xl font-serif">
-            Image {currentImageIndex + 1}
-          </div>
+        <div className="relative aspect-video bg-gray-900">
+          <Image
+            src={project.images[currentImageIndex]}
+            alt={`${project.title} — image ${currentImageIndex + 1}`}
+            fill
+            className="object-contain"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+          />
 
           {/* Navigation Arrows */}
           {project.images.length > 1 && (
@@ -128,15 +132,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`flex-shrink-0 w-20 h-20 bg-gradient-to-br from-gray-300 to-gray-500 rounded-sm transition-all ${
+                  className={`relative flex-shrink-0 w-20 h-20 rounded-sm overflow-hidden transition-all ${
                     index === currentImageIndex
                       ? "ring-2 ring-accent scale-105"
                       : "opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <div className="w-full h-full flex items-center justify-center text-white/30 text-xs font-serif">
-                    {index + 1}
-                  </div>
+                  <Image
+                    src={project.images[index]}
+                    alt={`${project.title} thumbnail ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                  />
                 </button>
               ))}
             </div>

@@ -12,11 +12,11 @@ test.describe('Home Page', () => {
   test('should display hero section with designer name', async ({ page }) => {
     const heroHeading = page.locator('h1').first();
     await expect(heroHeading).toBeVisible();
-    await expect(heroHeading).toContainText('[Designer Name]');
+    await expect(heroHeading).toContainText('Antoine Stephan');
   });
 
   test('should display tagline', async ({ page }) => {
-    await expect(page.locator('text=Creating Timeless Spaces')).toBeVisible();
+    await expect(page.locator('text=Creating Timeless Spaces for 45+ Years')).toBeVisible();
   });
 
   test('should have "View Portfolio" CTA button', async ({ page }) => {
@@ -36,8 +36,8 @@ test.describe('Home Page', () => {
   });
 
   test('should display project titles and metadata', async ({ page }) => {
-    await expect(page.locator('text=Modern Residence')).toBeVisible();
-    await expect(page.locator('text=Beverly Hills, CA')).toBeVisible();
+    await expect(page.locator('text=Contemporary Villa')).toBeVisible();
+    await expect(page.locator('text=Amman, Jordan').first()).toBeVisible();
   });
 
   test('should display brief introduction section', async ({ page }) => {
@@ -58,13 +58,13 @@ test.describe('Home Page', () => {
   test('should have working email link', async ({ page }) => {
     const emailLink = page.locator('a[href^="mailto:"]').first();
     await expect(emailLink).toBeVisible();
-    await expect(emailLink).toHaveAttribute('href', 'mailto:hello@example.com');
+    await expect(emailLink).toHaveAttribute('href', 'mailto:stephan.dec@hotmail.com');
   });
 
   test('should have working phone link', async ({ page }) => {
     const phoneLink = page.locator('a[href^="tel:"]').first();
     await expect(phoneLink).toBeVisible();
-    await expect(phoneLink).toHaveAttribute('href', 'tel:+1234567890');
+    await expect(phoneLink).toHaveAttribute('href', 'tel:+962795535893');
   });
 
   test('should be responsive on mobile', async ({ page, viewport }) => {
@@ -80,7 +80,6 @@ test.describe('Home Page', () => {
     const firstCard = page.locator('.card').first();
     await expect(firstCard).toBeVisible();
     await firstCard.click();
-    // Should navigate to portfolio page with hash
-    await expect(page.url()).toContain('/portfolio');
+    await expect(page).toHaveURL(/\/portfolio/);
   });
 });

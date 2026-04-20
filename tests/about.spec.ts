@@ -10,11 +10,11 @@ test.describe('About Page', () => {
   });
 
   test('should display subtitle', async ({ page }) => {
-    await expect(page.locator('text=Four decades of creating spaces that inspire')).toBeVisible();
+    await expect(page.locator('text=45 years of creating spaces that inspire')).toBeVisible();
   });
 
   test('should display biography section', async ({ page }) => {
-    await expect(page.locator('text=My journey in interior design began over forty years ago')).toBeVisible();
+    await expect(page.locator('text=Born in Amman in 1955')).toBeVisible();
   });
 
   test('should have 5 biography paragraphs', async ({ page }) => {
@@ -45,11 +45,11 @@ test.describe('About Page', () => {
   });
 
   test('should display 5 process steps', async ({ page }) => {
-    await expect(page.locator('text=01')).toBeVisible();
-    await expect(page.locator('text=02')).toBeVisible();
-    await expect(page.locator('text=03')).toBeVisible();
-    await expect(page.locator('text=04')).toBeVisible();
-    await expect(page.locator('text=05')).toBeVisible();
+    await expect(page.locator('span:has-text("01")')).toBeVisible();
+    await expect(page.locator('span:has-text("02")')).toBeVisible();
+    await expect(page.locator('span:has-text("03")')).toBeVisible();
+    await expect(page.locator('span:has-text("04")')).toBeVisible();
+    await expect(page.locator('span:has-text("05")')).toBeVisible();
   });
 
   test('process steps should have titles', async ({ page }) => {
@@ -71,7 +71,7 @@ test.describe('About Page', () => {
   test('should have email button in contact section', async ({ page }) => {
     const emailButton = page.locator('a:has-text("Email Me")').last();
     await expect(emailButton).toBeVisible();
-    await expect(emailButton).toHaveAttribute('href', 'mailto:hello@example.com');
+    await expect(emailButton).toHaveAttribute('href', 'mailto:stephan.dec@hotmail.com');
   });
 
   test('should have phone link in contact section', async ({ page }) => {

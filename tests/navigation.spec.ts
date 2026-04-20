@@ -6,13 +6,13 @@ test.describe('Navigation', () => {
   });
 
   test('should display header with designer name', async ({ page }) => {
-    const logo = page.locator('header a:has-text("[Designer Name]")');
+    const logo = page.locator('header a:has-text("Antoine Stephan")');
     await expect(logo).toBeVisible();
   });
 
   test('logo should link to home page', async ({ page }) => {
     await page.goto('/about');
-    await page.locator('header a:has-text("[Designer Name]")').click();
+    await page.locator('header a:has-text("Antoine Stephan")').click();
     await expect(page).toHaveURL('/');
   });
 
@@ -102,7 +102,7 @@ test.describe('Navigation', () => {
   });
 
   test('footer should display designer name', async ({ page }) => {
-    await expect(page.locator('footer h3:has-text("[Designer Name]")')).toBeVisible();
+    await expect(page.locator('footer h3:has-text("Antoine Stephan")')).toBeVisible();
   });
 
   test('footer should have contact information', async ({ page }) => {
@@ -117,16 +117,16 @@ test.describe('Navigation', () => {
 
   test('footer should display copyright year', async ({ page }) => {
     const currentYear = new Date().getFullYear();
-    await expect(page.locator(`footer text=© ${currentYear}`)).toBeVisible();
+    await expect(page.locator('footer').getByText(`© ${currentYear}`, { exact: false })).toBeVisible();
   });
 
   test('footer email link should be clickable', async ({ page }) => {
     const emailLink = page.locator('footer a[href^="mailto:"]');
-    await expect(emailLink).toHaveAttribute('href', 'mailto:hello@example.com');
+    await expect(emailLink).toHaveAttribute('href', 'mailto:stephan.dec@hotmail.com');
   });
 
   test('footer phone link should be clickable', async ({ page }) => {
     const phoneLink = page.locator('footer a[href^="tel:"]');
-    await expect(phoneLink).toHaveAttribute('href', 'tel:+1234567890');
+    await expect(phoneLink).toHaveAttribute('href', 'tel:+962795535893');
   });
 });

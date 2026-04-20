@@ -5,31 +5,31 @@ import Image from "next/image";
 const featuredProjects = [
   {
     id: 1,
-    title: "Mashini Studio",
-    location: "Abdoun Tower, Amman",
-    year: "2024",
-    image: "/images/project-1.jpg",
+    title: "Contemporary Villa",
+    location: "Amman, Jordan",
+    year: "2025",
+    image: "/images/villa-amman-exterior.jpg",
   },
   {
     id: 2,
-    title: "Villa Ramzi Louza",
+    title: "Café Bateel",
     location: "Abdoun, Amman",
-    year: "2023",
-    image: "/images/project-2.jpg",
+    year: "2024",
+    image: "/images/cafe-bateel-counter.jpg",
   },
   {
     id: 3,
-    title: "Villa Wadie Qousous",
-    location: "Rainbow Street, Amman",
-    year: "2019",
-    image: "/images/project-3.jpg",
+    title: "Bathroom Renovation",
+    location: "Amman, Jordan",
+    year: "2025",
+    image: "/images/renovation-bathroom.jpg",
   },
   {
     id: 4,
-    title: "Rotana Tower Hotel",
-    location: "Abdali, Amman",
-    year: "2016",
-    image: "/images/project-4.jpg",
+    title: "Classical Residence",
+    location: "Amman, Jordan",
+    year: "2025",
+    image: "/images/villa-classical-living-room.jpg",
   },
 ];
 
@@ -40,12 +40,13 @@ export default function Home() {
       <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center bg-primary-light">
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10" />
 
-        {/* Placeholder for hero image - replace with actual image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-400 to-gray-600">
-          <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl font-serif">
-            Hero Image
-          </div>
-        </div>
+        <Image
+          src="/images/villa-amman-exterior.jpg"
+          alt="Contemporary villa exterior — Amman"
+          fill
+          className="object-cover"
+          priority
+        />
 
         <div className="relative z-20 text-center text-background-white px-6">
           <h1 className="text-display font-serif mb-6 text-balance">
@@ -77,11 +78,13 @@ export default function Home() {
                 href={`/portfolio#project-${project.id}`}
                 className="card group"
               >
-                {/* Placeholder for project image */}
-                <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-300 to-gray-500 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-white/30 text-4xl font-serif">
-                    {project.title}
-                  </div>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
                 </div>
 
