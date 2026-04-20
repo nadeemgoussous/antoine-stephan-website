@@ -1,0 +1,172 @@
+=================================================================
+INTERIOR DESIGN PORTFOLIO WEBSITE - PROGRESS LOG
+=================================================================
+
+PROJECT START DATE: December 22, 2024
+CLIENT: Antoine Stephan — Senior Interior Designer (70 years old, freelancer, Amman, Jordan)
+TECH STACK: Next.js 15, React 19, TypeScript, Tailwind CSS
+DESIGN SYSTEM: Adobe Spectrum-inspired
+
+=================================================================
+COMPLETED TASKS
+=================================================================
+
+[✓] December 22, 2024 - Initial Setup & Planning
+    - Selected Adobe Spectrum as design inspiration
+    - Planned 4-page website structure (Home, Portfolio, CV, About)
+    - Defined color palette and typography system
+
+[✓] December 22, 2024 - Full Initial Build
+    - Project configuration (Next.js 15, TypeScript, Tailwind CSS)
+    - Global styles and design system (globals.css, tailwind.config.ts)
+    - Root layout (app/layout.tsx) with Google Fonts
+    - Header component: sticky nav, mobile hamburger, active page highlighting
+    - Footer component: three-column layout with contact info
+    - Home page: Hero, Featured Projects grid, Introduction, Contact CTA
+    - Portfolio page: filterable gallery, project cards, modal with gallery
+    - ProjectCard and ProjectModal components
+    - CV page: timeline-style layout with all sections
+    - About page: biography, design philosophy, how-I-work process
+    - Documentation: README.md, NEXT-STEPS.md
+    - Testing setup: Playwright tests for all pages
+    - Production build successful (4 pages, ~102-106 kB first load JS)
+
+[✓] Phase 1 - Essential Content Updates (completed between Dec 2024 – Apr 2026)
+    - Designer name: Antoine Stephan (Header, Footer, layout.tsx, all pages)
+    - Email: stephan.dec@hotmail.com (Footer, home CTA)
+    - Phone: +962795535893 (Footer, home CTA)
+    - Location: Amman, Jordan
+    - Page title/metadata updated in app/layout.tsx
+    - Hero tagline: "Creating Timeless Spaces for 45+ Years"
+
+[✓] Partial Phase 3 - Home page project data updated
+    - Featured projects on home page use real project names and Amman locations:
+      1. Mashini Studio (Abdoun Tower, Amman, 2024)
+      2. Villa Ramzi Louza (Abdoun, Amman, 2023)
+      3. Villa Wadie Qousous (Rainbow Street, Amman, 2019)
+      4. Rotana Tower Hotel (Abdali, Amman, 2016)
+
+=================================================================
+SOURCE MATERIAL AVAILABLE
+=================================================================
+
+PHOTOS (22 images in /source-photos/):
+  20240606_140338.jpg
+  20240703_144640.jpg
+  20240704_105448.jpg
+  20240709_135108 (1).jpg
+  20240727_130346.jpg
+  20240727_130359.jpg
+  20250221_164429.jpg
+  20250223_112213.jpg
+  20250315_121430.jpg
+  20250623_230732.jpg
+  20250702_133141.jpg
+  20250826_172501.jpg
+  20250826_172516.jpg
+  20250826_172556.jpg
+  20250826_172705.jpg
+  20250828_155624.jpg
+  20250904_171201.jpg
+  20250913_155107.jpg
+  20250913_155218.jpg
+  20250913_155429.jpg
+  20251009_150314.jpg
+  20251120_160628.jpg
+
+CV (in /source-material/cv/):
+  Antoine Stephan_CV 2025.pdf
+
+=================================================================
+CURRENT STATUS
+=================================================================
+
+PHASE: Content Partially Customized
+DATE: April 2026
+SERVER: npm run dev → http://localhost:3000
+
+WHAT'S DONE:
+- Designer identity (name, email, phone) ✓
+- Home page project titles/locations real ✓
+- 22 source photos available (not yet integrated) ✓
+- CV PDF available (not yet extracted into cv page) ✓
+
+=================================================================
+PENDING TASKS
+=================================================================
+
+PHASE 2 - Images (Critical — source photos available, need integration)
+[ ] Review and categorize the 22 photos in /source-photos/
+[ ] Copy/rename photos to /public/images/ with proper naming:
+    - hero.jpg (hero background)
+    - portrait.jpg (about page)
+    - project-1.jpg through project-N.jpg (thumbnails)
+    - project-1-1.jpg etc. (gallery images per project)
+[ ] Update image references in portfolio/page.tsx to match real filenames
+
+PHASE 3 - Content Customization
+[ ] Portfolio page: replace 6 generic placeholder projects (Beverly Hills, Manhattan, etc.)
+    with Antoine's real projects — names/locations already known from home page
+[ ] About page: update biography with Antoine's real story
+[ ] About page: update design philosophy quotes
+[ ] CV page: extract content from Antoine Stephan_CV 2025.pdf and update cv/page.tsx
+
+PHASE 4 - Optional Enhancements
+[ ] Link CV PDF for download (copy to /public/ and add download button)
+[ ] Add custom favicon
+[ ] Add LinkedIn / Instagram URLs in Footer
+[ ] Set up custom domain
+[ ] SEO: meta descriptions, alt text for all images
+
+PHASE 5 - Pre-Launch
+[ ] Final testing on all devices
+[ ] Run Playwright test suite (npm test)
+[ ] Verify all links and contact links work
+[ ] Performance audit
+[ ] Deploy to Vercel or Netlify
+
+=================================================================
+KNOWN ISSUES
+=================================================================
+
+MINOR:
+- Next.js workspace root warning (multiple lockfiles) — safe to ignore
+- public/images/ is empty — all image src references return 404 until photos added
+
+BLOCKERS:
+- None. Photos and CV are available; ready to integrate.
+
+=================================================================
+QUICK COMMANDS
+=================================================================
+
+Start dev server:     npm run dev
+Build production:     npm run build
+Run tests:            npm test
+View site:            http://localhost:3000
+
+=================================================================
+FILES TO CUSTOMIZE (Quick Reference)
+=================================================================
+
+Images:           /public/images/ (currently empty — copy from /source-photos/)
+Portfolio data:   app/portfolio/page.tsx (lines 8–90, replace 6 placeholder projects)
+About bio:        app/about/page.tsx
+CV content:       app/cv/page.tsx (extract from source-material/cv/Antoine Stephan_CV 2025.pdf)
+Contact/social:   components/Footer.tsx (add LinkedIn/Instagram URLs)
+Design tokens:    tailwind.config.ts, app/globals.css
+
+=================================================================
+NOTES FOR NEXT SESSION
+=================================================================
+
+1. Read progress.txt and claude.md for context
+2. Check server: http://localhost:3000 — if not running: npm run dev
+3. Priority next task: integrate photos from /source-photos/ into /public/images/
+   then update portfolio page with real project data
+
+=================================================================
+END OF LOG
+=================================================================
+Last updated: April 20, 2026
+Current phase: Content Partially Customized — images and portfolio data still needed
