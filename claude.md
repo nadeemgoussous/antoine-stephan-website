@@ -7,6 +7,16 @@
 **Design System:** Adobe Spectrum-inspired (clean, sophisticated, gallery-like)
 **Status:** Content partially customized — images and portfolio data still needed (April 2026)
 
+## GitHub & Deployment
+
+- **Repo:** https://github.com/nadeemgoussous/antoine-stephan-website
+- **Live site:** https://nadeemgoussous.github.io/antoine-stephan-website/
+- **Deployment:** GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`)
+  - Auto-deploys on push to `main`
+  - Builds with `npm run build` → uploads `out/` folder
+- **Critical:** `next.config.ts` must keep `basePath: '/antoine-stephan-website'` and `assetPrefix: '/antoine-stephan-website'` — without these, CSS/JS assets 404 on GitHub Pages
+- **Custom domain:** Not configured (if added later, remove basePath/assetPrefix)
+
 ## Designer Contact Info (in code)
 - **Name:** Antoine Stephan
 - **Email:** stephan.dec@hotmail.com
